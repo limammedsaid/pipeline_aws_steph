@@ -37,10 +37,10 @@ pipeline {
                 script{
                     //WARNING -> this is not secure : tokens should not be used as plain text in the source code
                     //WARNING -> Don't forget to allow the use of a static method in a jenkins script (Administrer Jenkins -> In-process Script Approval)
-                    def token = hudson.util.Secret.fromString("1142522db6c8940099b7c23a269d451036")
+                    def token = hudson.util.Secret.fromString("11617dd1147e4056e835a7bf08d9820508")
                     def handle = triggerRemoteJob(
-                        job: 'http://172.16.32.65:8080/job/SABr%20CD/job/'+ env.BRANCH_NAME,
-                        auth: TokenAuth(apiToken: token, userName: 'stephane'),
+                        job: 'http://192.168.160.200:8080/job/KRD_Pipeline_multibranche/job/' + env.BRANCH_NAME,
+                        auth: TokenAuth(apiToken: token, userName: 'devops'),
                         parameters: 'SABR_MOTEUR_VERSION=1.2.14\nSABR_IHM_VERSION=2.5.34\nSIMULATEUR_VERSION=12.4.23')
                 }
             }          
