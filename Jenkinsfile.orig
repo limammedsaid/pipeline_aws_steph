@@ -1,8 +1,6 @@
 pipeline {
   agent any
-  environment {
-    Cred_KRD = crdentials ('KRD')
-  }
+
     stages {
         stage('Checkout') {
             steps{
@@ -34,14 +32,6 @@ pipeline {
                 echo "Storing artifact"
             }          
         }
-
-        stage('Push') {
-            steps{
-                      sh ('curl -u $Cred_KRD http://192.168.1.200:8080/job/KRDPipeline/build?token=12345678')
-
-            }          
-        }
-
         stage('Tigger CD') {
             steps{
                 script{
