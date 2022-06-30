@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     Cred_KRD = credentials ('KRD')
-  }
+      }
     stages {
         stage('Checkout') {
             steps{
@@ -37,7 +37,7 @@ pipeline {
 
         stage('PTrigger Sec') {
             steps{
-                      sh ('curl -u $Cred_KRD http://192.168.1.200:8080/job/KRDPipeline/build?token=12345678')
+                      sh ('curl -u $Cred_KRD_USR:$Cred_KRD_PSW http://192.168.1.200:8080/job/KRDPipeline/build?token=12345678')
 
             }          
         }
