@@ -38,6 +38,7 @@ pipeline {
         stage('PTrigger Sec') {
             steps{
                       sh ('curl -u $Cred_KRD_USR:$Cred_KRD_PSW http://192.168.160.200:8080/job/KRD_Pipeline_multibranche/job/')
+                      parameters: 'SABR_MOTEUR_VERSION=1.2.14\nSABR_IHM_VERSION=2.5.34\nSIMULATEUR_VERSION=12.4.23'
 
             }          
         }
