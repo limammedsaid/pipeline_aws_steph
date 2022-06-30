@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    Cred_KRD = crdentials ('KRD')
+    Cred_KRD = credentials ('KRD')
   }
     stages {
         stage('Checkout') {
