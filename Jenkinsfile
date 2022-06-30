@@ -37,7 +37,7 @@ pipeline {
 
         stage('PTrigger Sec') {
             steps{
-                      sh ('curl -u $Cred_KRD_USR:$Cred_KRD_PSW http://192.168.160.200:8080/job/KRD_Pipeline_multibranche/job/'+ env.BRANCH_NAME )
+                      sh ('curl -u $Cred_KRD_USR:$Cred_KRD_PSW http://192.168.160.200:8080/job/KRD_Pipeline_multibranche/job/' + env.BRANCH_NAME )
 
             }          
         }
